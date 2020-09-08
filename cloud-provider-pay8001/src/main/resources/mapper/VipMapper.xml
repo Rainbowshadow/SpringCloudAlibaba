@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lpx.springcloud.dao.VipDao">
+	<resultMap type="com.lpx.springcloud.entities.Vip" id="vip">
+		<id column="id" property="id" jdbcType="INTEGER"/>
+		<result column="content" property="content" />
+	</resultMap>
+	
+	<select id="slecteVip" resultType="com.lpx.springcloud.entities.Vip">
+		select * from vip
+	</select>
+	
+	<insert id="addVip" parameterType="com.lpx.springcloud.entities.Vip" useGeneratedKeys="true" keyProperty="id">
+	insert into vip(content) values(#{content});
+	</insert>
+
+</mapper>

@@ -1,0 +1,15 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: cloud_consumer_order80
+    
+eureka:
+  client:
+    register-with-eureka: true #表示将自己注册进服务中心
+    fetch-registry: true #单一中心 无所谓   服务集群 必须为true 来配合 ribbon 负载
+    service-url:
+#      defaultZone: http://localhost:7001/eureka  
+      defaultZone: http://localhost:7001/eureka,http://localhost:7002/eureka 
+      
